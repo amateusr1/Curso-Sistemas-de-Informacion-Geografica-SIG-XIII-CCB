@@ -1,0 +1,756 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #1f2933;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section {
+    padding: 100px 20px;
+}
+
+.section-light {
+    background: #f5f7f4;
+}
+
+.section-container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-label {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #52796f;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #17251f;
+}
+
+.section-intro {
+    max-width: 700px;
+    color: #65736d;
+    margin-bottom: 45px;
+}
+
+
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #e5e9e6;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 75px;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logos img {
+    max-height: 48px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #35433d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #52796f;
+}
+
+.nav-button {
+    background: #52796f;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-button:hover {
+    background: #3f6258;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.button-primary {
+    display: inline-block;
+    background: #52796f;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    background: #3f6258;
+}
+
+.button-secondary {
+    display: inline-block;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.button-large {
+    padding: 18px 35px;
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 720px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+
+/*
+   FOTO DE PORTADA
+
+   Cambia "portada.jpg" por tu imagen.
+
+   Ejemplo:
+
+   background-image:
+   linear-gradient(...),
+   url("imagenes/portada.jpg");
+*/
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20,35,29,0.92),
+            rgba(20,35,29,0.65),
+            rgba(20,35,29,0.35)
+        ),
+        url("imagenes/portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1150px;
+    width: 100%;
+    margin: auto;
+    padding: 90px 20px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 9px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    max-width: 850px;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.02;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #a8c9bb;
+}
+
+.hero-subtitle {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 650px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-info {
+    display: flex;
+    gap: 55px;
+    margin-top: 60px;
+}
+
+.hero-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-info strong {
+    font-size: 25px;
+}
+
+.hero-info span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    color: #53615b;
+}
+
+.highlight-box {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+    border: 1px solid #e5e9e6;
+}
+
+.highlight-box h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.highlight-box > p {
+    color: #66736d;
+    margin-bottom: 25px;
+}
+
+.highlight-item {
+    padding: 10px 0;
+    border-top: 1px solid #e7ebe8;
+    font-size: 14px;
+}
+
+.highlight-item span {
+    color: #52796f;
+    font-weight: 800;
+    margin-right: 8px;
+}
+
+
+/* =====================================================
+   TEMAS
+===================================================== */
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.topic-card {
+    background: white;
+    border: 1px solid #e1e7e3;
+    border-radius: 12px;
+    padding: 28px;
+    transition: 0.2s;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.topic-number {
+    color: #52796f;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.topic-card h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.topic-card p {
+    color: #68756f;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PROGRAMA
+===================================================== */
+
+.timeline {
+    max-width: 900px;
+    margin-top: 50px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 35px;
+    padding-bottom: 45px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #e3e8e5;
+}
+
+.timeline-day {
+    color: #52796f;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #637069;
+    margin-bottom: 15px;
+}
+
+.timeline-content ul {
+    padding-left: 20px;
+    color: #4e5c56;
+}
+
+
+/* =====================================================
+   PRÁCTICAS
+===================================================== */
+
+.section-dark {
+    background: #17251f;
+    color: white;
+}
+
+.section-dark h2 {
+    color: white;
+}
+
+.section-dark .section-label {
+    color: #a8c9bb;
+}
+
+.practice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.practice-card {
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.04);
+}
+
+.practice-number {
+    font-size: 14px;
+    color: #a8c9bb;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.practice-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.practice-card p {
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 25px;
+}
+
+.practice-location {
+    font-size: 13px;
+    color: #a8c9bb;
+}
+
+
+/* =====================================================
+   INSTRUCTORES
+===================================================== */
+
+.instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.instructor-card {
+    border: 1px solid #e0e6e2;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+}
+
+.instructor-photo {
+    height: 360px;
+    background: #e5ebe7;
+    overflow: hidden;
+}
+
+.instructor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instructor-info {
+    padding: 30px;
+}
+
+.instructor-info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.instructor-info span {
+    color: #52796f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.instructor-info p {
+    margin-top: 18px;
+    color: #68756f;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e0e6e2;
+    border-radius: 12px;
+}
+
+.info-icon {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: #66736d;
+    font-size: 14px;
+}
+
+.requirements {
+    margin-top: 30px;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #e0e6e2;
+}
+
+.requirements h3 {
+    margin-bottom: 20px;
+}
+
+.requirements-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.requirements-list span {
+    background: #edf2ef;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta {
+    padding: 110px 20px;
+    text-align: center;
+    background: #dfeae5;
+}
+
+.cta-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.cta h2 {
+    font-size: clamp(35px, 5vw, 55px);
+}
+
+.cta p {
+    color: #5d6c65;
+    margin-bottom: 30px;
+}
+
+.cta-note {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #111b17;
+    color: white;
+}
+
+.footer-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 60px 20px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-logos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-logos img {
+    max-height: 55px;
+    width: auto;
+}
+
+.footer-brand p {
+    max-width: 400px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+}
+
+.footer-info h4 {
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 20px;
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE — CELULARES
+===================================================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .nav-button {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    .logos img {
+        max-height: 38px;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-content {
+        padding: 70px 20px;
+    }
+
+    .hero-info {
+        gap: 25px;
+    }
+
+    .hero-info strong {
+        font-size: 20px;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instructors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+}
